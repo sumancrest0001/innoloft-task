@@ -60,7 +60,7 @@ class MainContent extends Component {
     return (
       <div className="main-content">
         <div>
-          <div className="form-tabs">
+          <div className="main-content-tabs">
             <div role="presentation" onClick={() => this.changeTab(1)} className={step === 1 ? 'active' : null}>User information</div>
             <div role="presentation" onClick={() => this.changeTab(2)} className={step === 2 ? 'active' : null}>Additional information</div>
           </div>
@@ -72,6 +72,7 @@ class MainContent extends Component {
           confirmPasswordValidator={this.validateConfirmPassword}
           moveToNext={this.changeTab}
         />
+        {/*  <MainInformation /> */}
       </div>
     );
   }

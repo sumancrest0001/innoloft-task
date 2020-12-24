@@ -4,10 +4,11 @@ import {
 } from 'informed';
 import './style.scss';
 
-const mainInformation = () => {
+const mainInformation = ({ moveToNext }) => {
   const onSubmit = values => {
     console.log(values);
     console.log('values are updated');
+    moveToNext(3);
   };
 
   return (
@@ -40,7 +41,7 @@ const mainInformation = () => {
           <div className="address">
             <div>
               <Text
-                className="address-input input"
+                className="address__input input"
                 field="street"
                 type="text"
                 placeholder="street"
@@ -51,7 +52,7 @@ const mainInformation = () => {
             </div>
             <div>
               <Text
-                className="address-input input"
+                className="address__input input"
                 field="house"
                 type="text"
                 placeholder="house number"
@@ -62,7 +63,7 @@ const mainInformation = () => {
             </div>
             <div>
               <Text
-                className="address-input input"
+                className="address__input input"
                 field="postalCode"
                 type="text"
                 placeholder="postal"
@@ -72,7 +73,7 @@ const mainInformation = () => {
               {formState.errors.postalCode ? <small style={{ color: 'red' }}>{formState.errors.postalCode}</small> : null}
             </div>
             <div>
-              <Select field="country" initialValue="Germany" className="address-input input">
+              <Select field="country" initialValue="Germany" className="address__input input">
                 <option value="Germany">Germany</option>
                 <option value="Austria">Austria</option>
                 <option value="Switzerland">Switzerland</option>
@@ -85,5 +86,6 @@ const mainInformation = () => {
     </Form>
   );
 };
+
 
 export default mainInformation;
