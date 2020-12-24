@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Form, Text, Select,
 } from 'informed';
-import './style.scss';
+import '../style.scss';
 
 const mainInformation = ({ moveToNext }) => {
   const onSubmit = values => {

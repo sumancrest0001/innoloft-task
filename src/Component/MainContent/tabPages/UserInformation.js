@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Form, Text,
 } from 'informed';
-import './style.scss';
+import '../style.scss';
 
 const userInformation = ({
   emailValidator, moveToNext, passwordStrengthIndicator,

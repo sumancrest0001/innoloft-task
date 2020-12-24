@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import UserInformation from './UserInformation';
-// import MainInformation from './MainInformation';
+import UserInformation from './tabPages/UserInformation';
+import MainInformation from './tabPages/MainInformation';
+import Review from './tabPages/Review';
 import './style.scss';
 
 class MainContent extends Component {
@@ -55,24 +56,37 @@ class MainContent extends Component {
     this.setState({ step: tabNumber });
   }
 
+  renderForm = () => {
+    const { step } = this.state;
+    switch (step) {
+      case 1:
+        return (
+          <UserInformation
+            emailValidator={this.validateEmail}
+            passwordStrengthIndicator={this.strengthIndicator}
+            passwordValidator={this.validatePassword}
+            confirmPasswordValidator={this.validateConfirmPassword}
+            moveToNext={this.changeTab}
+          />
+        );
+      case 2:
+        return <MainInformation moveToNext={this.changeTab} />;
+      case 3:
+        return <Review />;
+      default:
+        return null;
+    }
+  }
+
   render() {
     const { step } = this.state;
     return (
       <div className="main-content">
-        <div>
-          <div className="main-content-tabs">
-            <div role="presentation" onClick={() => this.changeTab(1)} className={step === 1 ? 'active' : null}>User information</div>
-            <div role="presentation" onClick={() => this.changeTab(2)} className={step === 2 ? 'active' : null}>Additional information</div>
-          </div>
+        <div className="main-content__tabs">
+          <div role="presentation" onClick={() => this.changeTab(1)} className={step === 1 ? 'active' : null}>User information</div>
+          <div role="presentation" onClick={() => this.changeTab(2)} className={step === 2 ? 'active' : null}>Additional information</div>
         </div>
-        <UserInformation
-          emailValidator={this.validateEmail}
-          passwordStrengthIndicator={this.strengthIndicator}
-          passwordValidator={this.validatePassword}
-          confirmPasswordValidator={this.validateConfirmPassword}
-          moveToNext={this.changeTab}
-        />
-        {/*  <MainInformation /> */}
+        {this.renderForm()}
       </div>
     );
   }
