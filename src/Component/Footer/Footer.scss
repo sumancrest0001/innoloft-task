@@ -1,0 +1,21 @@
+.footer {
+  height: 30vh;
+  text-align: center;
+
+  & div {
+    margin: auto;
+  }
+
+  &__links {
+    display: inline-block;
+    margin: 0.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #212529;
+    cursor: pointer;
+  }
+
+  &__links:hover {
+    color: black;
+  }
+}

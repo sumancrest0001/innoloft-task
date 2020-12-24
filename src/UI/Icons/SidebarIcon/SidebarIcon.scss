@@ -1,0 +1,19 @@
+.sidebar-icon {
+  display: flex;
+  direction: row;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: 300;
+  color: #212529;
+}
+
+.sidebar-icon:hover {
+  background-color: #cccdcf;
+  cursor: pointer;
+}
+
+.text {
+  margin-left: 1rem;
+
+}
