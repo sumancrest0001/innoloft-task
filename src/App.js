@@ -27,7 +27,7 @@ class App extends Component {
         <div className="main-container">
           <Aside />
           <MainContent />
-          <ResponsiveSidebar show={sidebarHidden} click={this.toggleStatus} />
+          <ResponsiveSidebar hide={sidebarHidden} click={this.toggleStatus} />
         </div>
       </div>
     );
