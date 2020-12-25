@@ -26,17 +26,14 @@
 }
 
 .form {
-  display: flex;
-  direction: row;
-  justify-content: center;
+  margin: auto;
+  width: 70%;
 }
-
 // input forms styles
-.formInputs {
+.form-inputs {
   display: flex;
   flex-direction: column;
   justify-self: center;
-  width: 70%;
 }
 
 .form-input {
@@ -44,7 +41,7 @@
 }
 
 .progress-bar {
-  display: flex;
+  display: flex-inline;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -85,4 +82,20 @@
   height: 30px;
   font-size: 18px;
   margin-bottom: 1rem;
+}
+
+.error-message {
+  color: red;
+  display: inline-block;
+}
+
+@media screen and (max-width: 620px) {
+.main-content {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.submit-button {
+  width: 7rem;
+}
 }

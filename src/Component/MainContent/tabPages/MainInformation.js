@@ -4,17 +4,27 @@ import {
 } from 'informed';
 import '../style.scss';
 
-const mainInformation = ({ moveToNext }) => {
+const mainInformation = ({ moveToNext, updateMainInfo }) => {
   const onSubmit = values => {
-    console.log(values);
-    console.log('values are updated');
+    const addressInfo = {
+      street: values.street,
+      houseNo: values.house,
+      postalCode: values.postalCode,
+      country: values.country,
+    };
+    const payload = {
+      firstName: values.first,
+      lastName: values.last,
+      address: addressInfo,
+    };
     moveToNext(3);
+    updateMainInfo(payload);
   };
 
   return (
     <Form className="form" onSubmit={onSubmit}>
       {({ formState }) => (
-        <div className="formInputs">
+        <div className="form-inputs">
           <div>
             <Text
               className="form-input input"
@@ -24,7 +34,7 @@ const mainInformation = ({ moveToNext }) => {
               required="First name is required"
               validateOnBlur
             />
-            {formState.errors.first ? <small style={{ color: 'red' }}>{formState.errors.first}</small> : null}
+            {formState.errors.first ? <small className="error-message">{formState.errors.first}</small> : null}
           </div>
           <div>
             <Text
@@ -35,7 +45,7 @@ const mainInformation = ({ moveToNext }) => {
               required="Last name is required"
               validateOnBlur
             />
-            {formState.errors.last ? <small style={{ color: 'red' }}>{formState.errors.last}</small> : null}
+            {formState.errors.last ? <small className="error-message">{formState.errors.last}</small> : null}
           </div>
 
           <div className="address">
@@ -48,7 +58,7 @@ const mainInformation = ({ moveToNext }) => {
                 required="Street required"
                 validateOnBlur
               />
-              {formState.errors.street ? <small style={{ color: 'red' }}>{formState.errors.street}</small> : null}
+              {formState.errors.street ? <small className="error-message">{formState.errors.street}</small> : null}
             </div>
             <div>
               <Text
@@ -59,7 +69,7 @@ const mainInformation = ({ moveToNext }) => {
                 required="House number required"
                 validateOnBlur
               />
-              {formState.errors.house ? <small style={{ color: 'red' }}>{formState.errors.house}</small> : null}
+              {formState.errors.house ? <small className="error-message">{formState.errors.house}</small> : null}
             </div>
             <div>
               <Text
@@ -70,7 +80,7 @@ const mainInformation = ({ moveToNext }) => {
                 required="Postal code required"
                 validateOnBlur
               />
-              {formState.errors.postalCode ? <small style={{ color: 'red' }}>{formState.errors.postalCode}</small> : null}
+              {formState.errors.postalCode ? <small className="error-message">{formState.errors.postalCode}</small> : null}
             </div>
             <div>
               <Select field="country" initialValue="Germany" className="address__input input">

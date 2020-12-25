@@ -1,12 +1,16 @@
 import React from 'react';
 import { FaChevronUp, FaRegBell } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import Icons from '../../UI/Icons/Icons';
 import logo from '../../images/logo_innoloft.png';
 import profile from '../../images/user-image.webp';
 import './Header.scss';
 
-const header = () => (
+const header = ({ toggleShowStatus }) => (
   <div className="header">
+    <div className="header__hamburger-menu" onClick={toggleShowStatus}>
+      <Icons size="1.5rem"><GiHamburgerMenu /></Icons>
+    </div>
     <img src={logo} alt="innoloft logo" className="logo-image" />
     <ul className="header__icons">
       <li className="header__languages">

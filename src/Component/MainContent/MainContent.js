@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import UserInformation from './tabPages/UserInformation';
 import MainInformation from './tabPages/MainInformation';
-import Review from './tabPages/Review';
+import { addUserInfo, addMainInfo } from '../../store/actions';
+import ReviewInfo from './tabPages/ReviewInfo';
 import './style.scss';
 
 class MainContent extends Component {
@@ -58,6 +60,7 @@ class MainContent extends Component {
 
   renderForm = () => {
     const { step } = this.state;
+    const { onAddMainInfo, onAddUserInfo } = this.props;
     switch (step) {
       case 1:
         return (
@@ -67,12 +70,13 @@ class MainContent extends Component {
             passwordValidator={this.validatePassword}
             confirmPasswordValidator={this.validateConfirmPassword}
             moveToNext={this.changeTab}
+            updateUserInfo={onAddUserInfo}
           />
         );
       case 2:
-        return <MainInformation moveToNext={this.changeTab} />;
+        return <MainInformation moveToNext={this.changeTab} updateMainInfo={onAddMainInfo} />;
       case 3:
-        return <Review />;
+        return <ReviewInfo />;
       default:
         return null;
     }
@@ -92,5 +96,9 @@ class MainContent extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  onAddUserInfo: payload => dispatch(addUserInfo(payload)),
+  onAddMainInfo: payload => dispatch(addMainInfo(payload)),
+});
 
-export default MainContent;
+export default connect(null, mapDispatchToProps)(MainContent);

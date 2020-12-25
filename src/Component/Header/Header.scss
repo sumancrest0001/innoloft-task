@@ -8,6 +8,14 @@
   background-color: #3B5998;
   color: #ffffff;
 
+  &__hamburger-menu {
+    display: none;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    margin-left: 1rem;
+  }
+
 &__languages {
   list-style: none;
   display: inline-flex;
@@ -40,4 +48,14 @@
   background-size: cover;
   background-position: center; 
 }
+}
+
+@media screen and (max-width: 980px) {
+  .header__hamburger-menu {
+    display: inline-block;
+  }
+
+  .logo-image {
+    display: none;
+  }
 }

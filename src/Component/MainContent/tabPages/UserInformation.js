@@ -6,12 +6,15 @@ import '../style.scss';
 
 const userInformation = ({
   emailValidator, moveToNext, passwordStrengthIndicator,
-  passwordValidator, confirmPasswordValidator,
+  passwordValidator, confirmPasswordValidator, updateUserInfo,
 }) => {
   const onSubmit = values => {
-    console.log(values);
-    console.log('values are updated');
     moveToNext(2);
+    const payload = {
+      email: values.email,
+      password: values.password,
+    };
+    updateUserInfo(payload);
   };
 
   const renderPasswordStrength = value => {
@@ -45,7 +48,7 @@ const userInformation = ({
             initialValue=""
             validate={emailValidator}
           />
-          {formState.errors.email && <small style={{ color: 'red' }}>{formState.errors.email}</small>}
+          {formState.errors.email && <small className="error-message">{formState.errors.email}</small>}
           <Text
             field="password"
             type="password"
@@ -56,7 +59,7 @@ const userInformation = ({
             className="form-input input"
             validate={passwordValidator}
           />
-          {formState.errors.password && <small style={{ color: 'red' }}>{formState.errors.password}</small>}
+          {formState.errors.password && <small className="error-message">{formState.errors.password}</small>}
           {renderPasswordStrength(formState.values.password)}
           <Text
             field="confirmPassword"
@@ -68,7 +71,7 @@ const userInformation = ({
             className="form-input input"
             validate={confirmPasswordValidator}
           />
-          {formState.errors.confirmPassword ? <small style={{ color: 'red' }}>{formState.errors.confirmPassword}</small> : null}
+          {formState.errors.confirmPassword ? <small className="error-message">{formState.errors.confirmPassword}</small> : null}
           <button type="submit" className="submit-button">Submit</button>
         </div>
       )}
