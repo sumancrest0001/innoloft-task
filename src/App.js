@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.scss';
+import Header from './Component/Header/Header';
+import Aside from './Component/Sidebar/Aside';
+import MainContent from './Component/MainContent/MainContent';
+import ResponsiveSidebar from './Component/Sidebar/ResponsiveSidebar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sidebarHidden: true,
+    };
+  }
+
+  toggleStatus = () => {
+    const { sidebarHidden } = this.state;
+    this.setState({ sidebarHidden: !sidebarHidden });
+    console.log(sidebarHidden);
+  }
+
+  render() {
+    const { sidebarHidden } = this.state;
+    return (
+      <div className="App" >
+        <Header toggleShowStatus={this.toggleStatus} />
+        <div className="main-container">
+          <Aside />
+          <MainContent />
+          <ResponsiveSidebar hide={sidebarHidden} click={this.toggleStatus} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
