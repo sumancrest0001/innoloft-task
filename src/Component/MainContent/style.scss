@@ -1,13 +1,14 @@
 .main-content {
   margin: 1rem auto;
   width: 65%;
+
   &__tabs {
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
-  
+
   &__tabs div {
     padding: 0.7rem;
     width: 50%;
@@ -18,7 +19,7 @@
 .form-section {
   width: 70%;
   justify-self: center;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .active {
@@ -41,7 +42,7 @@
 }
 
 .progress-bar {
-  display: flex-inline;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -62,7 +63,7 @@
 .submit-button {
   width: 10rem;
   padding: 0.5rem 1rem;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   cursor: pointer;
 }
 
@@ -90,12 +91,12 @@
 }
 
 @media screen and (max-width: 620px) {
-.main-content {
-  width: 90%;
-  margin: 1rem auto;
-}
+  .main-content {
+    width: 90%;
+    margin: 1rem auto;
+  }
 
-.submit-button {
-  width: 7rem;
-}
+  .submit-button {
+    width: 7rem;
+  }
 }
