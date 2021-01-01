@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/innoloft-task/static/css/main.268eac55.chunk.css",
+    "main.js": "/innoloft-task/static/js/main.fb0befd0.chunk.js",
+    "main.js.map": "/innoloft-task/static/js/main.fb0befd0.chunk.js.map",
+    "runtime-main.js": "/innoloft-task/static/js/runtime-main.3e1e28c8.js",
+    "runtime-main.js.map": "/innoloft-task/static/js/runtime-main.3e1e28c8.js.map",
+    "static/js/2.842af6f3.chunk.js": "/innoloft-task/static/js/2.842af6f3.chunk.js",
+    "static/js/2.842af6f3.chunk.js.map": "/innoloft-task/static/js/2.842af6f3.chunk.js.map",
+    "static/js/3.3d7566a1.chunk.js": "/innoloft-task/static/js/3.3d7566a1.chunk.js",
+    "static/js/3.3d7566a1.chunk.js.map": "/innoloft-task/static/js/3.3d7566a1.chunk.js.map",
+    "index.html": "/innoloft-task/index.html",
+    "static/css/main.268eac55.chunk.css.map": "/innoloft-task/static/css/main.268eac55.chunk.css.map",
+    "static/js/2.842af6f3.chunk.js.LICENSE.txt": "/innoloft-task/static/js/2.842af6f3.chunk.js.LICENSE.txt",
+    "static/media/user-image.09a40445.webp": "/innoloft-task/static/media/user-image.09a40445.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e1e28c8.js",
+    "static/js/2.842af6f3.chunk.js",
+    "static/css/main.268eac55.chunk.css",
+    "static/js/main.fb0befd0.chunk.js"
+  ]
+}
